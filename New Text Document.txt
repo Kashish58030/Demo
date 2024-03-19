@@ -1,0 +1,21 @@
+In SQL, a "LEFT JOIN" and an "OUTER JOIN" refer to the same operation. They are used interchangeably to describe a type of join that includes all the rows from the left table in the join clause and only the matching rows from the right table. If there is no matching row in the right table, NULL values are returned for the columns from the right table.
+
+Here's a breakdown of what happens with a LEFT JOIN (or OUTER JOIN):
+
+1. **Returns All Rows from the Left Table**: Regardless of whether there is a matching row in the right table, all rows from the left table are included in the result set.
+
+2. **Includes Matching Rows from the Right Table**: If there is a matching row in the right table, it is included in the result set.
+
+3. **NULL Values for Non-Matching Rows**: If there is no matching row in the right table, NULL values are returned for the columns from the right table in the result set.
+
+The syntax for a LEFT JOIN is typically as follows:
+
+```sql
+SELECT column_list
+FROM left_table
+LEFT JOIN right_table ON join_condition;
+```
+
+Here, "left_table" and "right_table" are the names of the tables being joined, and "join_condition" specifies the condition for matching rows between the two tables.
+
+LEFT JOINs (or OUTER JOINs) are useful when you want to retrieve all records from one table, regardless of whether there are matching records in the other table. They are commonly used in scenarios where you want to retrieve data from the primary table even if related data doesn't exist in the secondary table.
